@@ -8,6 +8,22 @@
 
   <h1>Ballpark</h1>
 
+  session: <%= session[:user_id]%>
+
+  <% if logged_in? %>
+
+    logged in as <%= current_user.username %>
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Log Out</button>
+    </form>
+
+  <% else%>
+
+    <a href="/login/new">Log In</a>
+
+  <% end %>
+
   <%= yield %>
 
 </body>

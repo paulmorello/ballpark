@@ -8,6 +8,20 @@ require_relative 'models/sport'
 require_relative 'models/comment'
 require 'pry'
 
+enable :sessions
+
+helpers do
+
+  def logged_in?
+    !!current_user
+  end
+
+  def current_user
+    User.find_by(id: session[:user_id])
+  end
+
+end
+
 get '/' do
 
   @videos = Video.all
@@ -17,7 +31,7 @@ end
 
 get '/videos/new' do
 
-  # redirect to '/session/new' unless logged_in?
+  redirect to '/login/new' unless logged_in?
 
   @sports = Sport.all
 
@@ -40,7 +54,7 @@ end
 
 get '/photos/new' do
 
-  # redirect to '/session/new' unless logged_in?
+  redirect to '/login/new' unless logged_in?
 
   @sports = Sport.all
 
@@ -65,7 +79,7 @@ get '/videos/:id' do
 
   @video = Video.find_by(id: params[:id])
 
-  @comments = Comment.where( video_id: @video.id )
+  @comments = Comment.where(video_id: @video.id).reverse_order
 
   erb :video_show
 
@@ -75,13 +89,15 @@ get '/photos/:id' do
 
   @photo = Photo.find_by(id: params[:id])
 
-  @comments = Comment.where( photo_id: @photo.id )
+  @comments = Comment.where(photo_id: @photo.id).reverse_order
 
   erb :photo_show
 
 end
 
 get '/videos/:id/edit' do
+
+  redirect to '/login/new' unless logged_in?
 
   @video = Video.find_by(id: params[:id])
   @sports = Sport.all
@@ -100,6 +116,8 @@ end
 
 get '/photos/:id/edit' do
 
+  redirect to '/login/new' unless logged_in?
+
   @photo = Photo.find_by(id: params[:id])
   @sports = Sport.all
 
@@ -116,6 +134,9 @@ post '/photos/:id' do
 end
 
 post '/comments/video' do
+
+  redirect to '/login/new' unless logged_in?
+
   comment = Comment.new
   comment.body = params[:body]
   comment.video_id = params[:video_id]
@@ -126,6 +147,9 @@ post '/comments/video' do
 end
 
 post '/comments/photo' do
+
+  redirect to '/login/new' unless logged_in?
+
   comment = Comment.new
   comment.body = params[:body]
   comment.photo_id = params[:photo_id]
@@ -137,6 +161,8 @@ end
 
 delete '/videos/:id/delete' do
 
+  redirect to '/login/new' unless logged_in?
+
   video = Video.find_by(id: params[:id])
   video.destroy
 
@@ -145,12 +171,56 @@ end
 
 delete '/photos/:id/delete' do
 
+  redirect to '/login/new' unless logged_in?
+
   photo = Photo.find_by(id: params[:id])
   photo.destroy
 
   redirect to '/'
 end
 
+get '/login/new' do
+  erb :login_new
+end
+
+post '/signup' do
+
+  user = User.find_by(email: params[:email])
+
+  if user == nil
+
+    user = User.new
+    user.email = params[:email]
+    user.username = params[:username]
+    user.password = params[:password]
+    user.save
+
+  else
+
+    redirect to "/login/new"
+
+  end
+end
+
+post '/session' do
+
+  user = User.find_by(email: params[:email])
+
+  if user && user.authenticate(params[:password])
+    # you are fine, let me create a session for you
+    session[:user_id] = user.id
+    redirect to '/'
+  else
+    # who are you
+    erb :login_new
+  end
+end
+
+delete '/session' do
+  #remove the session
+  session[:user_id] = nil
+  redirect to '/login/new'
+end
 
 
 # SELECT column_name(s)

@@ -1,8 +1,12 @@
+<% if logged_in? %>
+  <a href="/photos/new">New Photo</a>
+  <a href="/videos/new">New Video</a>
+<% end %>
 
 <% @videos.each do |video| %>
 
   <h2>
-    <a href=""><%= video.title %></a>
+    <a href="/videos/<%= video.id %>"><%= video.title %></a>
     <%= video.video_url %>
   </h2>
 
@@ -11,7 +15,7 @@
 <% @photos.each do |photo| %>
 
   <h2>
-    <a href=""><%= photo.title %></a>
+    <a href="/photos/<%= photo.id %>"><%= photo.title %></a>
     <img src="<%= photo.photo_url %>" alt="">
   </h2>
 
