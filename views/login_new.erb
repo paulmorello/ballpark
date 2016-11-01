@@ -1,21 +1,31 @@
-<form action="/session" method="post">
-  <input name="email" type="text" placeholder="Email">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/login.css">
+  <title>Document</title>
+</head>
+<body>
 
-  <input name="password" type="password" placeholder="Password">
+  <section id="home-wrapper">
+    <div class="home-search">
+      <h2>Discover sports from behind the scenes.</h2>
+      <input type="text" name="search" placeholder="Search for Basketball, Soccer, MMA etc">
+    </div>
 
-  <button>Login</button>
-</form>
+    <div class="sign-up">
+      <form action="/signup" method="post">
+        <h2>Sign Up</h2>
+        <input name="email" type="text" placeholder="Email">
 
-<h2>Discover sports from behind the scenes.</h2>
-<input type="text" name="search" placeholder="Search for Basketball, Soccer, MMA etc">
+        <input name="username" type="text" placeholder="Username">
 
-<form action="/signup" method="post">
-  <h2>Sign Up</h2>
-  <input name="email" type="text" placeholder="Email">
+        <input name="password" type="password" placeholder="Password">
 
-  <input name="username" type="text" placeholder="Username">
+        <button>Sign Up</button>
+      </form>
+    </div>
+  </section>
 
-  <input name="password" type="password" placeholder="Password">
-
-  <button>Sign Up</button>
-</form>
+</body>
+</html>

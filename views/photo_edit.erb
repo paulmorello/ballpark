@@ -1,19 +1,20 @@
 <h2>Edit Photo</h2>
 
-<form action="/photos/<%= @photo.id %>" method="post">
+<div class="new-posts">
+  <form action="/photos/<%= @photo.id %>" method="post">
 
-  <input name="title" type="text" value="<%=@photo.title%>">
+    <input name="title" type="text" value="<%=@photo.title%>">
 
-  <select name="sport_id" type="text" value="<%= @photo.sport.name %>">
-    <% @sports.each do |sport| %>
-      <option value="<%= sport.id %>"><%= sport.name %></option>
-    <% end %>
-  </select>
+    <select name="sport_id" type="text" value="<%= @photo.sport.name %>">
+      <% @sports.each do |sport| %>
+        <option value="<%= sport.id %>"><%= sport.name %></option>
+      <% end %>
+    </select>
 
-  <textarea name="description" rows="8" cols="40"><%=@photo.description%></textarea>
+    <textarea name="description" rows="8" cols="40"><%=@photo.description%></textarea>
 
-  <textarea name="photo_url" rows="8" cols="40"><%=@photo.photo_url%></textarea>
+    <textarea name="photo_url" rows="8" cols="40"><%=@photo.photo_url%></textarea>
 
-  <button>Save</button>
-
-</form>
+    <button>Save</button>
+  </form>
+</div>

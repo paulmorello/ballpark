@@ -23,6 +23,7 @@ helpers do
 end
 
 get '/' do
+  redirect to '/login/new' unless logged_in?
 
   @videos = Video.all
   @photos = Photo.all
@@ -46,6 +47,7 @@ post '/videos' do
   video.sport_id = params[:sport_id]
   video.description = params[:description]
   video.video_url = params[:video_url]
+  video.user_id = current_user.id
   video.save
 
   redirect to '/'
@@ -69,6 +71,7 @@ post '/photos' do
   photo.sport_id = params[:sport_id]
   photo.description = params[:description]
   photo.photo_url = params[:photo_url]
+  photo.user_id = current_user.id
   photo.save
 
   redirect to '/'
@@ -140,6 +143,7 @@ post '/comments/video' do
   comment = Comment.new
   comment.body = params[:body]
   comment.video_id = params[:video_id]
+  comment.user_id = current_user.id
   comment.save
 
   redirect to "/videos/#{comment.video_id}"
@@ -153,6 +157,7 @@ post '/comments/photo' do
   comment = Comment.new
   comment.body = params[:body]
   comment.photo_id = params[:photo_id]
+  comment.user_id = current_user.id
   comment.save
 
   redirect to "/photos/#{comment.photo_id}"
@@ -164,6 +169,8 @@ delete '/videos/:id/delete' do
   redirect to '/login/new' unless logged_in?
 
   video = Video.find_by(id: params[:id])
+  comment = Comment.where(video_id: video.id)
+  comment.destroy
   video.destroy
 
   redirect to '/'
@@ -174,6 +181,8 @@ delete '/photos/:id/delete' do
   redirect to '/login/new' unless logged_in?
 
   photo = Photo.find_by(id: params[:id])
+  comment = Comment.where(photo_id: photo.id)
+  comment.destroy
   photo.destroy
 
   redirect to '/'
@@ -194,6 +203,8 @@ post '/signup' do
     user.username = params[:username]
     user.password = params[:password]
     user.save
+
+    redirect to '/'
 
   else
 
@@ -221,9 +232,3 @@ delete '/session' do
   session[:user_id] = nil
   redirect to '/login/new'
 end
-
-
-# SELECT column_name(s)
-# FROM table1
-# JOIN table2
-# ON table1.column_name=table2.column_name;

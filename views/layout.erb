@@ -2,13 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/main.css">
   <title>Ballpark</title>
 </head>
 <body>
 
-  <h1>Ballpark</h1>
+  <header>
+    <nav>
+      <ul>
+        <h3 id="logo">Ball<span>Park</span></h3>
 
-  session: <%= session[:user_id]%>
+        <% if logged_in? %>
+          <input class="nav-search" type="text" placeholder="search">
+          <li><a href="/photos/new">Share a Photo</a></li>
+          <li><a href="/videos/new">Share a Video</a></li>
+
+        <% else%>
+
+          <form action="/session" method="post">
+            <input class="login-search" name="email" type="text" placeholder="Email">
+
+            <input class="login-search" name="password" type="password" placeholder="Password">
+
+            <button>Login</button>
+          </form>
+
+        <% end %>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- session: <%= session[:user_id]%> -->
+
+  <%= yield %>
 
   <% if logged_in? %>
 
@@ -20,11 +47,9 @@
 
   <% else%>
 
-    <a href="/login/new">Log In</a>
+    <p></p>
 
   <% end %>
-
-  <%= yield %>
 
 </body>
 </html>

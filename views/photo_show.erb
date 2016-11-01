@@ -1,7 +1,10 @@
-<h2><%= @photo.title %></h2>
-<h4>By <%= @photo.sport.name %></h4>
 
-<a href="">Edit</a>
+<section class="show-header">
+  <h2><%= @photo.title %></h2>
+  <h4>By <%= @photo.sport.name %></h4>
+
+  <a href="/photos/<%=@photo.id%>/edit">Edit</a>
+</section>
 
 <img src="<%= @photo.photo_url %>" alt="">
 

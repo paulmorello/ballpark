@@ -1,22 +1,17 @@
-<% if logged_in? %>
-  <a href="/photos/new">New Photo</a>
-  <a href="/videos/new">New Video</a>
-<% end %>
 
 <% @videos.each do |video| %>
-
-  <h2>
-    <a href="/videos/<%= video.id %>"><%= video.title %></a>
+  <div class="index-posts">
+    <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
     <%= video.video_url %>
-  </h2>
+  </div>
 
 <% end %>
 
 <% @photos.each do |photo| %>
 
-  <h2>
-    <a href="/photos/<%= photo.id %>"><%= photo.title %></a>
+  <div class="index-posts">
+    <h2><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h2>
     <img src="<%= photo.photo_url %>" alt="">
-  </h2>
+  </div>
 
 <% end %>

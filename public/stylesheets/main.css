@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #E0E0E0;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+}
+
+nav {
+  background-color: #454C4F;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin: 0;
+}
+
+#logo {
+  position: relative;
+  left: 0%;
+  padding-top: 15px;
+  color: red;
+  margin: 0;
+  width: 150px;
+  font-size: 2em;
+  display: inline-block;
+  color: #008A20;
+  font-family: 'Palanquin Dark', sans-serif;
+}
+
+span {
+  color: white;
+}
+
+.nav-search {
+  width: 20%;
+  padding: 10px;
+  position: relative;
+  left: -1%;
+  display: inline-block;
+  top: -5px;
+  border-radius: 10px;
+}
+
+nav form {
+  display: inline-block;
+  width: 40%;
+  margin: 15px;
+}
+
+.login-search {
+  width: 30%;
+  padding: 10px;
+  position: relative;
+  left: 110%;
+  display: inline-block;
+  margin-right: 5px;
+  top: -5px;
+  border-radius: 10px;
+}
+
+nav form button {
+  display: inline-block;
+  position: relative;
+  left: 111%;
+  top: -5px;
+  width: 15%;
+  padding: 10px;
+}
+
+nav li {
+  display: inline-block;
+  width: 10%;
+  font-size: 1.2em;
+  position: relative;
+  left: 28%;
+  margin: 15px;
+  padding: 15px;
+  font-family: 'Palanquin Dark', sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: #008A20;
+}
+
+.index-posts {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Palanquin Dark', sans-serif;
+  margin-bottom: 30px;
+}
+
+.new-posts {
+  position: relative;
+  left: 36%;
+  width: 60%;
+}
+
+.new-posts input, textarea {
+  display: block;
+}
+
+.new-posts input, select, textarea   {
+  width: 40%;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.new-posts select {
+  width: 45%;
+}
+
+.new-posts button {
+  position: relative;
+  width: 20%;
+  left: 14%;
+}
+
+.show-header {
+  width: 50%;
+  margin: 20px;
+}
+
+.show-header h2 {
+  display: inline-block;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.show-header h4 {
+  display: inline-block;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.show-header a {
+  display: inline-block;
+  position: relative;
+  left: 35%;
+  width: 5%;
+  padding: 10px;
+  text-decoration: none;
+  font-family: 'Palanquin Dark', sans-serif;
+  border: 2px solid #008A20;
+  color: #008A20;
+}
+
+img {
+  max-width: 600px;
+  height: 350px;
+}

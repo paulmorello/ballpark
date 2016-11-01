@@ -1,20 +1,21 @@
 
 <h2>New Photo</h2>
 
-<form action="/photos" method="post">
+<div class="new-posts">
+  <form action="/photos" method="post">
 
-  <input name="title" type="text" placeholder="Title">
+    <input name="title" type="text" placeholder="Title">
 
-  <select name="sport_id" type="text" value="">
-    <% @sports.each do |sport| %>
-      <option value="<%= sport.id %>"><%= sport.name %></option>
-    <% end %>
-  </select>
+    <select name="sport_id" type="text" value="">
+      <% @sports.each do |sport| %>
+        <option value="<%= sport.id %>"><%= sport.name %></option>
+      <% end %>
+    </select>
 
-  <textarea name="description" rows="8" cols="40" placeholder="Description"></textarea>
+    <textarea name="description" rows="8" cols="40" placeholder="Description"></textarea>
 
-  <input name="photo_url" type="text" placeholder="Photo URL">
+    <input name="photo_url" type="text" placeholder="Photo URL">
 
-  <button>Create</button>
-
-</form>
+    <button>Create</button>
+  </form>
+</div>

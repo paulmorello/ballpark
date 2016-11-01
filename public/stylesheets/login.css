@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
+
+html {
+  height: 100%;
+  width: 100%;
+  background-image: url("http://www.sportsauthorityfieldatmilehigh.com/images/default-source/site-images/bg-body.jpg");
+  background-size: cover;
+}
+
+body {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#home-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.home-search {
+  float: left;
+  width: 40%;
+  position: absolute;
+  top: 25%;
+  color: white;
+  text-align: center;
+}
+
+.home-search h2 {
+  font-size: 2.5em;
+  font-family: 'Palanquin Dark', sans-serif;
+}
+
+.home-search input {
+  width: 95%;
+  padding: 15px;
+  font-size: 1.2em;
+  border-radius: 15px;
+}
+
+.sign-up {
+  float: right;
+  width: 40%;
+  margin-top: 6%;
+  border: 2px solid white;
+  color: white;
+}
+
+.sign-up h2 {
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Palanquin Dark', sans-serif;
+}
+
+.sign-up input {
+  display: block;
+  width: 65%;
+  padding: 10px;
+  font-size: .8em;
+  border-radius: 15px;
+  margin: 15px auto;
+}
+
+.sign-up button {
+  position: relative;
+  left: 35%;
+  width: 20%;
+  margin: 20px;
+  padding: 10px;
+}

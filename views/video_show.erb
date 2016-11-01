@@ -1,8 +1,10 @@
 
-<h2><%= @video.title %></h2>
-<h4>By <%= @video.sport.name %> </h4>
+<section class="show-header">
+  <h2><%= @video.title %></h2>
+  <h4>By <%= @video.sport.name %> </h4>
 
-<a href="">Edit</a>
+  <a href="/videos/<%=@video.id%>/edit">Edit</a>
+</section>
 
 <%= @video.video_url %>
 

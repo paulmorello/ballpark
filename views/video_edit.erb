@@ -1,19 +1,20 @@
 <h2>Edit Video</h2>
 
-<form action="/videos/<%= @video.id %>" method="post">
+<div class="new-posts">
+  <form action="/videos/<%= @video.id %>" method="post">
 
-  <input name="title" type="text" value="<%=@video.title%>">
+    <input name="title" type="text" value="<%=@video.title%>">
 
-  <select name="sport_id" type="text" value="<%= @video.sport.name %>">
-    <% @sports.each do |sport| %>
-      <option value="<%= sport.id %>"><%= sport.name %></option>
-    <% end %>
-  </select>
+    <select name="sport_id" type="text" value="<%= @video.sport.name %>">
+      <% @sports.each do |sport| %>
+        <option value="<%= sport.id %>"><%= sport.name %></option>
+      <% end %>
+    </select>
 
-  <textarea name="description" rows="8" cols="40"><%=@video.description%></textarea>
+    <textarea name="description" rows="8" cols="40"><%=@video.description%></textarea>
 
-  <textarea name="video_url" rows="8" cols="40"><%=@video.video_url%></textarea>
+    <textarea name="video_url" rows="8" cols="40"><%=@video.video_url%></textarea>
 
-  <button>Save</button>
-
-</form>
+    <button>Save</button>
+  </form>
+</div>
