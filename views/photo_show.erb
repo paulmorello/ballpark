@@ -1,0 +1,11 @@
+<h2><%= @photo.title %></h2>
+<h4>By <%= @photo.sport.name %></h4>
+
+<a href="">Edit</a>
+
+<img src="<%= @photo.photo_url %>" alt="">
+
+<form action="/photos/<%=@photo.id%>/delete" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <button>Delete</button>
+</form>

@@ -1,0 +1,12 @@
+
+<h2><%= @video.title %></h2>
+<h4>By <%= @video.sport.name %> </h4>
+
+<a href="">Edit</a>
+
+<%= @video.video_url %>
+
+<form action="/videos/<%=@video.id%>/delete" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <button>Delete</button>
+</form>

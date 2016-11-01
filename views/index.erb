@@ -1,0 +1,18 @@
+
+<% @videos.each do |video| %>
+
+  <h2>
+    <a href=""><%= video.title %></a>
+    <%= video.video_url %>
+  </h2>
+
+<% end %>
+
+<% @photos.each do |photo| %>
+
+  <h2>
+    <a href=""><%= photo.title %></a>
+    <img src="<%= photo.photo_url %>" alt="">
+  </h2>
+
+<% end %>
