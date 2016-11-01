@@ -10,3 +10,13 @@
   <input type="hidden" name="_method" value="DELETE">
   <button>Delete</button>
 </form>
+
+<form action="/comments/video" method="post">
+  <input type="hidden" name="video_id" value="<%= @video.id %>">
+  <textarea name="body" rows="8" cols="40"></textarea>
+  <button>Post Comment</button>
+</form>
+
+<% @comments.each do |comment| %>
+  <p><%= comment.body %></p>
+<% end %>
