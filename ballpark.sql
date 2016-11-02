@@ -47,3 +47,6 @@ CREATE TABLE favorites (
   photo_id INTEGER,
   user_id INTEGER
 );
+
+ALTER TABLE photos
+  ADD photo TEXT;

@@ -1,17 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+<body>
 
-<% @videos.each do |video| %>
-  <div class="index-posts">
-    <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
-    <%= video.video_url %>
+  <% @videos.each do |video| %>
+    <div class="index-posts">
+      <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
+      <h4>in <%= video.sport.name %></h4>
+      <%= video.video_url %>
+    </div>
+
+  <% end %>
+
+  <% @photos.each do |photo| %>
+
+    <div class="index-posts">
+      <h2><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h2>
+      <h4>in <%= photo.sport.name %></h4>
+      <img src="<%= photo.photo_url %>" alt="">
+    </div>
+
+  <% end %>
+
+  <div>
+
   </div>
 
-<% end %>
-
-<% @photos.each do |photo| %>
-
-  <div class="index-posts">
-    <h2><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h2>
-    <img src="<%= photo.photo_url %>" alt="">
-  </div>
-
-<% end %>
+</body>
+</html>

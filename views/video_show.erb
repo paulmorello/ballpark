@@ -1,9 +1,13 @@
 
 <section class="show-header">
   <h2><%= @video.title %></h2>
-  <h4>By <%= @video.sport.name %> </h4>
+  <h4>By <%= @video.user.username %> </h4>
 
-  <a href="/videos/<%=@video.id%>/edit">Edit</a>
+  <% if @photo.user_id == current_user.id %>
+    <a href="/videos/<%=@video.id%>/edit">Edit</a>
+  <% else %>
+    <p></p>
+  <% end %>
 </section>
 
 <%= @video.video_url %>
@@ -20,5 +24,6 @@
 </form>
 
 <% @comments.each do |comment| %>
+  <h5><%= comment.user.username %></h5>
   <p><%= comment.body %></p>
 <% end %>

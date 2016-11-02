@@ -1,7 +1,11 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+# require 'image_magick'
 require_relative 'db_config'
 require_relative 'models/video'
+require_relative 'models/my_uploader'
 require_relative 'models/photo'
 require_relative 'models/user'
 require_relative 'models/sport'
@@ -26,7 +30,8 @@ get '/' do
   redirect to '/login/new' unless logged_in?
 
   @videos = Video.all
-  @photos = Photo.all
+  @photos = Photo.all.reverse_order
+  @posts = Photo.where(sport_id: 1)
   erb :index
 end
 
@@ -202,9 +207,17 @@ post '/signup' do
     user.email = params[:email]
     user.username = params[:username]
     user.password = params[:password]
-    user.save
 
-    redirect to '/'
+    if user.valid? == true
+      user.save
+      if user && user.authenticate(params[:password])
+        # you are fine, let me create a session for you
+        session[:user_id] = user.id
+        redirect to '/'
+      end
+    else
+      redirect to 'login/new'
+    end
 
   else
 
