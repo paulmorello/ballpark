@@ -23,4 +23,6 @@ class Video < ActiveRecord::Base
   belongs_to :user
 
   mount_uploader :video, MyUploader
+
+  validates :title, :video, presence: true
 end

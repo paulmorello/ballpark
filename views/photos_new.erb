@@ -6,6 +6,7 @@
 
     <input name="title" type="text" placeholder="Title">
 
+    <!-- Iterates through all available sport tags -->
     <select name="sport_id" type="text" value="">
       <% @sports.each do |sport| %>
         <option value="<%= sport.id %>"><%= sport.name %></option>
@@ -13,9 +14,7 @@
     </select>
 
     <textarea name="description" rows="8" cols="40" placeholder="Description"></textarea>
-
     <input name="image" type="file" placeholder="Photo URL">
-
     <button>Create</button>
   </form>
 </div>

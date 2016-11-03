@@ -2,9 +2,9 @@
 
 <div class="new-posts">
   <form action="/photos/<%= @photo.id %>" method="post">
-
     <input name="title" type="text" value="<%=@photo.title%>">
 
+    <!-- Iterates through possible sport tags and displays them in dropdown -->
     <select name="sport_id" type="text" value="<%= @photo.sport.name %>">
       <% @sports.each do |sport| %>
         <option value="<%= sport.id %>"><%= sport.name %></option>
@@ -12,9 +12,7 @@
     </select>
 
     <textarea name="description" rows="8" cols="40"><%=@photo.description%></textarea>
-
     <input name="image" type="file" placeholder="Photo URL">
-
     <button>Save</button>
   </form>
 </div>

@@ -11,6 +11,8 @@
       <h2><%= @photo.title %></h2>
       <h4>By <a href="/user_profile/<%= @photo.user.id%>"><%= @photo.user.username %></a></h4>
 
+      <!-- If the user id is the same as the current user, the edit button -->
+      <!-- will be displayed. -->
       <% if @photo.user_id == current_user.id %>
         <a href="/photos/<%=@photo.id%>/edit" class="edit-button">Edit</a>
       <% else %>
@@ -19,7 +21,6 @@
     </div>
 
     <img src="<%= @photo.image.url %>" alt="">
-
     <p><%= @photo.description %></p>
   </section>
 
@@ -31,14 +32,7 @@
     </form>
   </section>
 
-  <section class="comments">
-    <p>Comments</p>
-    <% @comments.each do |comment| %>
-      <h5><%= comment.user.username %></h5>
-      <p><%= comment.body %></p>
-    <% end %>
-  </section>
-
+  <!-- Delete button displayed if the user is the same as the current user -->
   <% if @photo.user_id == current_user.id %>
     <div class="delete-button">
       <form action="/photos/<%=@photo.id%>/delete" method="post">
@@ -49,6 +43,16 @@
   <% else %>
     <p></p>
   <% end %>
+
+  <section class="comments">
+    <p>Comments</p>
+
+    <!-- Iterates through and displays comments -->
+    <% @comments.each do |comment| %>
+      <h5><%= comment.user.username %></h5>
+      <p><%= comment.body %></p>
+    <% end %>
+  </section>
 
 </body>
 </html>

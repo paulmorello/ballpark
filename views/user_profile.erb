@@ -8,9 +8,12 @@
 
   <div class="profile-header">
     <h2><%= @user.username %></h2>
+
+    <!-- Counts all user photo and video posts to display count. -->
     <h3> Posts: <%= @user_photos.count.to_i + @user_videos.count.to_i%></h3>
   </div>
 
+  <!-- Iterates and displays all user photo, video posts -->
   <% @user_photos.each do |photo| %>
     <div class="user-posts">
       <h4><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h4>

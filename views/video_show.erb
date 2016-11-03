@@ -11,6 +11,8 @@
       <h2><%= @video.title %></h2>
       <h4>By <a href="/user_profile/<%= @video.user.id%>"><%= @video.user.username %></a> </h4>
 
+      <!-- If the post user id equals the current user then edit button is
+      displayed. -->
       <% if @video.user_id == current_user.id %>
         <a href="/videos/<%=@video.id%>/edit" class="edit-button">Edit</a>
       <% else %>
@@ -31,12 +33,15 @@
 
   <section class="comments">
     <p>Comments</p>
+
+    <!-- Displays all comments -->
     <% @comments.each do |comment| %>
       <h5><%= comment.user.username %></h5>
       <p><%= comment.body %></p>
     <% end %>
   </section>
 
+  <!-- Displays delete button on page if user post id matches current user -->
   <% if @video.user_id == current_user.id %>
     <div class="delete-button">
       <form action="/videos/<%=@video.id%>/delete" method="post">

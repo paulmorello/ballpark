@@ -24,5 +24,5 @@ class Photo < ActiveRecord::Base
 
   mount_uploader :image, MyUploader
 
-  validates :title, presence: true
+  validates :title, :image, presence: true
 end

@@ -128,4 +128,22 @@ h4 {
 
 .delete-button {
   display: block;
+  width: 30%;
+}
+
+.delete-button button {
+  position: relative;
+  left: 22em;
+  margin: 10px;
+  padding: 10px;
+  width: 40%;
+  background-color: #C30B04;
+  border: 2px solid #C30B04;
+  color: white;
+  font-size: .8em;
+}
+
+.delete-button button:hover {
+  background-color: #8B0B04;
+  border: 2px solid #8B0B04;
 }
