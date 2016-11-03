@@ -1,0 +1,17 @@
+<h2><%= @user.username %></h2>
+
+<% @user_photos.each do |photo| %>
+  <div class="user-posts">
+    <h4><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h4>
+    <h5>in <%= photo.sport.name %></h5>
+    <img src="<%= photo.photo_url %>" alt="">
+  </div>
+<% end %>
+
+<% @user_videos.each do |video| %>
+  <div class="user-posts">
+    <h4><a href="/videos/<%= video.id %>"><%= video.title %></a></h4>
+    <h5>in <%= video.sport.name %></h5>
+    <img src="<%= video.video_url %>" alt="">
+  </div>
+<% end %>

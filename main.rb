@@ -110,7 +110,11 @@ get '/videos/:id/edit' do
   @video = Video.find_by(id: params[:id])
   @sports = Sport.all
 
-  erb :video_edit
+  if @video.user_id == current_user.id
+    erb :video_edit
+  else
+    redirect to "/videos/#{params[:id]}"
+  end
 end
 
 post '/videos/:id' do
@@ -129,7 +133,11 @@ get '/photos/:id/edit' do
   @photo = Photo.find_by(id: params[:id])
   @sports = Sport.all
 
-  erb :photo_edit
+  if @photo.user_id == current_user.id
+    erb :photo_edit
+  else
+    redirect to "/photos/#{params[:id]}"
+  end
 end
 
 post '/photos/:id' do
@@ -191,6 +199,16 @@ delete '/photos/:id/delete' do
   photo.destroy
 
   redirect to '/'
+end
+
+get '/user_profile/:id' do
+  redirect to '/login/new' unless logged_in?
+
+  @user = User.find_by(id: params[:id])
+  @user_photos = Photo.where(user_id: params[:id])
+  @user_videos = Video.where(user_id: params[:id])
+
+  erb :user_profile
 end
 
 get '/login/new' do

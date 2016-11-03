@@ -1,29 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/show.css">
+</head>
+<body>
 
-<section class="show-header">
-  <h2><%= @video.title %></h2>
-  <h4>By <%= @video.user.username %> </h4>
+  <section class="show-header">
+    <h2><%= @video.title %></h2>
+    <h4>By <%= @video.user.username %> </h4>
 
-  <% if @photo.user_id == current_user.id %>
-    <a href="/videos/<%=@video.id%>/edit">Edit</a>
-  <% else %>
-    <p></p>
-  <% end %>
-</section>
+    <% if @video.user_id == current_user.id %>
+      <a href="/videos/<%=@video.id%>/edit">Edit</a>
+    <% else %>
+      <p></p>
+    <% end %>
+  </section>
 
-<%= @video.video_url %>
+  <%= @video.video_url %>
 
-<form action="/videos/<%=@video.id%>/delete" method="post">
-  <input type="hidden" name="_method" value="DELETE">
-  <button>Delete</button>
-</form>
+  <form action="/comments/video" method="post">
+    <input type="hidden" name="video_id" value="<%= @video.id %>">
+    <textarea name="body" rows="8" cols="40"></textarea>
+    <button>Post Comment</button>
+  </form>
 
-<form action="/comments/video" method="post">
-  <input type="hidden" name="video_id" value="<%= @video.id %>">
-  <textarea name="body" rows="8" cols="40"></textarea>
-  <button>Post Comment</button>
-</form>
+  <section class="comments">
+    <p>Comments</p>
+    <% @comments.each do |comment| %>
+      <h5><%= comment.user.username %></h5>
+      <p><%= comment.body %></p>
+    <% end %>
+  </section>
 
-<% @comments.each do |comment| %>
-  <h5><%= comment.user.username %></h5>
-  <p><%= comment.body %></p>
-<% end %>
+  <% if @video.user_id == current_user.id %>
+    <div class="delete-button">
+      <form action="/videos/<%=@video.id%>/delete" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete Post</button>
+      </form>
+    </div>
+    <% else %>
+      <p></p>
+    <% end %>
+
+</body>
+</html>

@@ -17,6 +17,13 @@
           <li><a href="/">Home</a></li>
           <li><a href="/photos/new">Share a Photo</a></li>
           <li><a href="/videos/new">Share a Video</a></li>
+          <li><a href="/user_profile/<%= current_user.id %>" >My Account</a></li>
+          <li class="logout">
+            <form action="/session" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <button>Log Out</button>
+          </li>
+          </form>
 
         <% else%>
 
@@ -38,19 +45,7 @@
 
   <%= yield %>
 
-  <% if logged_in? %>
 
-    logged in as <%= current_user.username %>
-    <form action="/session" method="post">
-      <input type="hidden" name="_method" value="DELETE">
-      <button>Log Out</button>
-    </form>
-
-  <% else%>
-
-    <p></p>
-
-  <% end %>
 
 </body>
 </html>

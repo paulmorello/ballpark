@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
 body {
   margin: 0;
@@ -79,8 +80,7 @@ nav li {
   width: 6%;
   font-size: 1em;
   position: relative;
-  left: 26%;
-  margin: 15px;
+  left: 20%;
   padding: 12px;
   font-family: 'Palanquin Dark', sans-serif;
 }
@@ -92,6 +92,20 @@ nav a {
 
 nav a:hover {
   color: #008A20;
+}
+
+.logout {
+  width: 5%;
+  position: relative;
+  left: 18%;
+}
+
+.logout form {
+  width: 0%;
+}
+
+.logout button {
+  width: 100px;
 }
 
 .index-posts {
@@ -132,37 +146,6 @@ h2 {
   left: 14%;
 }
 
-.show-header {
-  width: 50%;
-  margin: 20px;
-}
-
-.show-header h2 {
-  display: inline-block;
-  text-align: left;
-  padding: 0;
-  margin: 0;
-}
-
-.show-header h4 {
-  display: inline-block;
-  text-align: left;
-  padding: 0;
-  margin: 0;
-}
-
-.show-header a {
-  display: inline-block;
-  position: relative;
-  left: 35%;
-  width: 5%;
-  padding: 10px;
-  text-decoration: none;
-  font-family: 'Palanquin Dark', sans-serif;
-  border: 2px solid #008A20;
-  color: #008A20;
-}
-
 img {
   max-width: 500px;
   height: 250px;
@@ -175,4 +158,22 @@ h4 {
   position: relative;
   left: 2%;
   font-family: 'Roboto Slab', serif;
+}
+
+.user-posts {
+  background-color: white;
+  width: 30%;
+  margin: 10px;
+  float: left;
+}
+
+.user-posts img {
+  width: 60%;
+  height: 60%;
+}
+
+p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1em;
+  color: #333;
 }

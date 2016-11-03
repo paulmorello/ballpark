@@ -1,29 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/show.css">
+</head>
+<body>
 
-<section class="show-header">
-  <h2><%= @photo.title %></h2>
-  <h4>By <%= @photo.user.username %></h4>
+  <section class="show-header">
+    <div class="post-top">
+      <h2><%= @photo.title %></h2>
+      <h4>By <a href="/user_profile/<%= @photo.user.id%>"><%= @photo.user.username %></a></h4>
+
+      <% if @photo.user_id == current_user.id %>
+        <a href="/photos/<%=@photo.id%>/edit" class="edit-button">Edit</a>
+      <% else %>
+        <p></p>
+      <% end %>
+    </div>
+
+    <img src="<%= @photo.photo_url %>" alt="">
+
+    <p><%= @photo.description %></p>
+  </section>
+
+  <section class="comment-post">
+    <form action="/comments/photo" method="post">
+      <input type="hidden" name="photo_id" value="<%= @photo.id %>">
+      <textarea name="body"></textarea>
+      <button>Post Comment</button>
+    </form>
+  </section>
+
+  <section class="comments">
+    <p>Comments</p>
+    <% @comments.each do |comment| %>
+      <h5><%= comment.user.username %></h5>
+      <p><%= comment.body %></p>
+    <% end %>
+  </section>
 
   <% if @photo.user_id == current_user.id %>
-    <a href="/photos/<%=@photo.id%>/edit">Edit</a>
+    <div class="delete-button">
+      <form action="/photos/<%=@photo.id%>/delete" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete Post</button>
+      </form>
+    </div>
   <% else %>
     <p></p>
   <% end %>
-</section>
 
-<img src="<%= @photo.photo_url %>" alt="">
-
-<form action="/photos/<%=@photo.id%>/delete" method="post">
-  <input type="hidden" name="_method" value="DELETE">
-  <button>Delete</button>
-</form>
-
-<form action="/comments/photo" method="post">
-  <input type="hidden" name="photo_id" value="<%= @photo.id %>">
-  <textarea name="body" rows="8" cols="40"></textarea>
-  <button>Post Comment</button>
-</form>
-
-<% @comments.each do |comment| %>
-  <h5><%= comment.user.username %></h5>
-  <p><%= comment.body %></p>
-<% end %>
+</body>
+</html>
