@@ -2,7 +2,7 @@
 <h2>New Photo</h2>
 
 <div class="new-posts">
-  <form action="/photos" method="post">
+  <form action="/photos" method="post" enctype="multipart/form-data">
 
     <input name="title" type="text" placeholder="Title">
 
@@ -14,7 +14,7 @@
 
     <textarea name="description" rows="8" cols="40" placeholder="Description"></textarea>
 
-    <input name="photo_url" type="input" placeholder="Photo URL">
+    <input name="image" type="file" placeholder="Photo URL">
 
     <button>Create</button>
   </form>

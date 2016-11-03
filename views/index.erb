@@ -10,7 +10,7 @@
     <div class="index-posts">
       <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
       <h4>in <%= video.sport.name %></h4>
-      <%= video.video_url %>
+      <video width="500" height="250" src="<%= video.video.url %>" controls></video>
       <p><%= video.description %></p>
     </div>
 
@@ -21,7 +21,7 @@
     <div class="index-posts">
       <h2><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h2>
       <h4>in <%= photo.sport.name %></h4>
-      <img src="<%= photo.photo_url %>" alt="">
+      <img src="<%= photo.image.url %>" alt="">
       <p><%= photo.description %></p>
     </div>
 

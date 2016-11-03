@@ -7,23 +7,27 @@
 <body>
 
   <section class="show-header">
-    <h2><%= @video.title %></h2>
-    <h4>By <%= @video.user.username %> </h4>
+    <div class="post-top">
+      <h2><%= @video.title %></h2>
+      <h4>By <a href="/user_profile/<%= @video.user.id%>"><%= @video.user.username %></a> </h4>
 
-    <% if @video.user_id == current_user.id %>
-      <a href="/videos/<%=@video.id%>/edit">Edit</a>
-    <% else %>
-      <p></p>
-    <% end %>
+      <% if @video.user_id == current_user.id %>
+        <a href="/videos/<%=@video.id%>/edit" class="edit-button">Edit</a>
+      <% else %>
+        <p></p>
+      <% end %>
+    </div>
+
+    <video width="500" height="250" src="<%= @video.video.url %>" controls></video>
   </section>
 
-  <%= @video.video_url %>
-
-  <form action="/comments/video" method="post">
-    <input type="hidden" name="video_id" value="<%= @video.id %>">
-    <textarea name="body" rows="8" cols="40"></textarea>
-    <button>Post Comment</button>
-  </form>
+  <section class="comment-post">
+    <form action="/comments/video" method="post">
+      <input type="hidden" name="video_id" value="<%= @video.id %>">
+      <textarea name="body" rows="8" cols="40"></textarea>
+      <button>Post Comment</button>
+    </form>
+  </section>
 
   <section class="comments">
     <p>Comments</p>

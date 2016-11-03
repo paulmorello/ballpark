@@ -2,7 +2,7 @@
 <h2>New Video</h2>
 
 <div class="new-posts">
-  <form action="/videos" method="post">
+  <form action="/videos" method="post" enctype="multipart/form-data">
 
     <input name="title" type="text" placeholder="Title">
 
@@ -14,7 +14,7 @@
 
     <textarea name="description" rows="8" cols="40" placeholder="Description"></textarea>
 
-    <input name="video_url" type="text" placeholder="Video URL">
+    <input name="video" type="file" placeholder="Video URL">
 
     <button>Create</button>
   </form>

@@ -151,6 +151,10 @@ img {
   height: 250px;
 }
 
+video {
+  margin-top: 15px;
+}
+
 h4 {
   text-align: left;
   margin: 0;
@@ -158,18 +162,6 @@ h4 {
   position: relative;
   left: 2%;
   font-family: 'Roboto Slab', serif;
-}
-
-.user-posts {
-  background-color: white;
-  width: 30%;
-  margin: 10px;
-  float: left;
-}
-
-.user-posts img {
-  width: 60%;
-  height: 60%;
 }
 
 p {
