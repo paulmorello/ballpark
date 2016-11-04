@@ -51,3 +51,5 @@ CREATE TABLE favorites (
 ALTER TABLE photos ADD image TEXT;
 
 ALTER TABLE videos ADD video TEXT;
+
+INSERT INTO sports (name) VALUES ('Basketball');

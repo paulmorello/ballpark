@@ -31,16 +31,6 @@
     </form>
   </section>
 
-  <section class="comments">
-    <p>Comments</p>
-
-    <!-- Displays all comments -->
-    <% @comments.each do |comment| %>
-      <h5><%= comment.user.username %></h5>
-      <p><%= comment.body %></p>
-    <% end %>
-  </section>
-
   <!-- Displays delete button on page if user post id matches current user -->
   <% if @video.user_id == current_user.id %>
     <div class="delete-button">
@@ -52,6 +42,17 @@
     <% else %>
       <p></p>
     <% end %>
+
+  <section class="comments">
+    <p>Comments</p>
+
+    <!-- Displays all comments -->
+    <% @comments.each do |comment| %>
+      <h5><%= comment.user.username %></h5>
+      <p><%= comment.body %></p>
+    <% end %>
+  </section>
+
 
 </body>
 </html>
