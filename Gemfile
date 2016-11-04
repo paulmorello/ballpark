@@ -1,6 +1,7 @@
 source 'https://rubygems.org/'
 
 gem 'carrierwave'
+gem 'carrierwave/orm/activerecord'
 gem 'fog'
 gem 'activerecord'
 gem 'sinatra'
