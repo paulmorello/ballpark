@@ -169,3 +169,39 @@ p {
   font-size: 1em;
   color: #333;
 }
+
+@media (max-width: 850px) {
+  #logo {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .nav-search {
+    display: block;
+    position: static;
+    width: 0%;
+  }
+  .login-search {
+    position: static;
+    display: block;
+    width: 80%;
+    margin: 5px 20px 5px 0px;
+  }
+  nav form button {
+    position: static;
+    width: 80%;
+    margin: 10px;
+  }
+  nav li {
+    display: block;
+    width: 80%;
+  }
+  nav form {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+  nav input {
+    margin: 0 auto;
+  }
+}

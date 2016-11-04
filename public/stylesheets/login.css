@@ -68,3 +68,36 @@ body {
   margin: 20px;
   padding: 10px;
 }
+
+@media (max-width: 400px) {
+
+  html {
+    background-color: #13B04C;
+    background-image: none;
+    background-size: none;
+  }
+
+  body {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  #home-wrapper {
+    width: 100%;
+  }
+
+  .home-search {
+    float: none;
+    display: block;
+    margin: 20px auto;
+    margin-top: 120px;
+    width: 80%;
+    position: static;
+  }
+  .sign-up {
+    float: none;
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    position: static;
+  }
+}

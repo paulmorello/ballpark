@@ -47,9 +47,11 @@ This project utilsed HTML, CSS, Ruby, SQL, Active Record, Sinatra, Amazon S3, Po
 
 * A more functional mobile design that uses the mobile camera to take pictures and videos and upload them directly to the site.
 
+* Better sorting and post display. Optimising post display by tags and related posts.
+
 * Display error messages when user input fails.
 
-* The ability to favorite/like posts and store those posts in their User-profiles.
+* The ability to favourite/like posts and store those posts in their User-profiles.
 
 * Allow users to add profile pictures.
 
