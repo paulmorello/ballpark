@@ -6,22 +6,22 @@
 </head>
 <body>
 
-  <!-- Iterating through uploaded videos, photos and displaying content -->
-  <% @videos.each do |video| %>
-    <div class="index-posts">
-      <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
-      <h4>in <%= video.sport.name %></h4>
-      <video width="500" height="250" src="<%= video.video.url %>" controls></video>
-      <p><%= video.description %></p>
-    </div>
-  <% end %>
-
-  <% @photos.each do |photo| %>
+  <!-- Iterates and displays all user photo, video posts -->
+  <% @sport_photos.each do |photo| %>
     <div class="index-posts">
       <h2><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h2>
       <h4>in <%= photo.sport.name %></h4>
       <img src="<%= photo.image.url %>" alt="">
       <p><%= photo.description %></p>
+    </div>
+  <% end %>
+
+  <% @sport_videos.each do |video| %>
+    <div class="index-posts">
+      <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
+      <h4>in <%= video.sport.name %></h4>
+      <video width="500" height="250" src="<%= video.video.url %>" controls></video>
+      <p><%= video.description %></p>
     </div>
   <% end %>
 

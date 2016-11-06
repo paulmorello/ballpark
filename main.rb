@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/reloader'
 require 'fog'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
@@ -33,6 +34,7 @@ get '/' do
 
   @videos = Video.all.reverse_order
   @photos = Photo.all.reverse_order
+  @sports = Sport.all
 
   erb :index
 end
@@ -102,7 +104,6 @@ get '/photos/:id' do
 
   erb :photo_show
 end
-
 
 get '/videos/:id/edit' do
 
@@ -199,6 +200,16 @@ delete '/photos/:id/delete' do
   redirect to '/'
 end
 
+get '/sport/:id' do
+
+  @sports = Sport.all
+  @sport_photos = Photo.where(sport_id: params[:id])
+  @sport_videos = Video.where(sport_id: params[:id])
+
+  erb :search_show
+
+end
+
 # User profile pages used to display each users previous posts
 get '/user_profile/:id' do
   redirect to '/login/new' unless logged_in?
@@ -208,6 +219,25 @@ get '/user_profile/:id' do
   @user_videos = Video.where(user_id: params[:id])
 
   erb :user_profile
+end
+
+
+get '/user_profile/:id/edit' do
+  redirect to '/login/new' unless logged_in?
+
+  @user = User.find_by(id: params[:id])
+
+  erb :profile_edit
+end
+
+post '/user_profile/:id' do
+
+  user = User.find_by(id: params[:id])
+  user.email = params[:email]
+  user.avatar = params[:avatar]
+  user.save
+
+  redirect to "/user_profile/#{params[:id]}"
 end
 
 # Login or sign up to start a new session

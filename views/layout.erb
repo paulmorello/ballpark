@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=devide-width" , "initial-scale=1">
   <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <title>Ballpark</title>
 </head>
 <body>
@@ -10,21 +13,12 @@
   <header>
     <nav>
       <ul>
-        <h3 id="logo">Ball<span>Park</span></h3>
+        <h3 id="logo"><a href="/">Ball<span>Park</span></a></h3>
 
         <!-- If user is logged in nav displays links and logout button -->
         <% if logged_in? %>
           <input class="nav-search" type="text" placeholder="search">
-          <li><a href="/">Home</a></li>
-          <li><a href="/photos/new">Share a Photo</a></li>
-          <li><a href="/videos/new">Share a Video</a></li>
-          <li><a href="/user_profile/<%= current_user.id %>">My Account</a></li>
-          <li class="logout">
-            <form action="/session" method="post">
-            <input type="hidden" name="_method" value="DELETE">
-            <button>Log Out</button>
-          </li>
-          </form>
+          <li id="menu-btn">Welcome <%= current_user.username %>!</a></li>
 
         <!-- If user not logged in, nav displays login form -->
         <% else%>
@@ -37,11 +31,30 @@
 
       </ul>
     </nav>
+
+    <!-- If user logged in display dropdown menu -->
+    <% if logged_in? %>
+    <div id="dropdown-menu">
+      <ul class="responsive-menu">
+          <li><a href="/user_profile/<%= current_user.id %>">Profile</a></li>
+          <li><a href="/user_profile/<%= current_user.id %>/edit">My Account</a></li>
+          <li class="logout">
+            <form action="/session" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <button>Log Out</button>
+            </form>
+          </li>
+      </ul>
+    </div>
+    <% end %>
   </header>
 
 
   <%= yield %>
 
 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script type="text/javascript" src="/scripts/main.js"></script>
 </body>
 </html>

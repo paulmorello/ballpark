@@ -30,7 +30,6 @@ ul {
   width: 150px;
   font-size: 2em;
   display: inline-block;
-  color: #008A20;
   font-family: 'Palanquin Dark', sans-serif;
 }
 
@@ -38,11 +37,15 @@ span {
   color: white;
 }
 
+#menu-btn {
+  color: white;
+}
+
 .nav-search {
   width: 20%;
   padding: 10px;
   position: relative;
-  left: -1%;
+  left: 1%;
   display: inline-block;
   top: -5px;
   border-radius: 10px;
@@ -77,10 +80,10 @@ nav form button {
 nav li {
   text-align: center;
   display: inline-block;
-  width: 6%;
+  width: 10%;
   font-size: 1em;
   position: relative;
-  left: 20%;
+  left: 50%;
   padding: 12px;
   font-family: 'Palanquin Dark', sans-serif;
 }
@@ -88,10 +91,6 @@ nav li {
 nav a {
   text-decoration: none;
   color: white;
-}
-
-nav a:hover {
-  color: #008A20;
 }
 
 .logout {
@@ -170,38 +169,41 @@ p {
   color: #333;
 }
 
-@media (max-width: 850px) {
-  #logo {
-    margin: 0 auto;
-    display: block;
-  }
+#dropdown-menu {
+  position: absolute;
+  right: 0;
+  background-color: #454C4F;
+  margin-right: 1em;
+  width: 20%;
+}
 
-  .nav-search {
-    display: block;
-    position: static;
-    width: 0%;
-  }
-  .login-search {
-    position: static;
-    display: block;
-    width: 80%;
-    margin: 5px 20px 5px 0px;
-  }
-  nav form button {
-    position: static;
-    width: 80%;
-    margin: 10px;
-  }
-  nav li {
-    display: block;
-    width: 80%;
-  }
-  nav form {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-  }
-  nav input {
-    margin: 0 auto;
-  }
+.responsive-menu {
+  text-align: left;
+  font-size: 1.2em;
+  font-family: 'Roboto Slab', serif;
+}
+
+.responsive-menu li {
+  display: block;
+  position: relative;
+  right: 2em;
+  width: 150px;
+  margin: 1.4em;
+  color: white;
+}
+
+.responsive-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.responsive-menu a:hover {
+  color: #008A20;
+}
+
+.responsive-menu li button {
+  display: block;
+  position: relative;
+  right: 2em;
+  padding: 20px;
 }

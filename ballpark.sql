@@ -53,3 +53,5 @@ ALTER TABLE photos ADD image TEXT;
 ALTER TABLE videos ADD video TEXT;
 
 INSERT INTO sports (name) VALUES ('Basketball');
+
+ALTER TABLE users ADD avatar TEXT;
