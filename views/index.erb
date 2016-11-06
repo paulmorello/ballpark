@@ -2,36 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width", "initial-scale=1">
   <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 <body>
 
-  <!-- Iterating through uploaded videos, photos and displaying content -->
-  <% @videos.each do |video| %>
-    <div class="index-posts">
-      <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
-      <h4>in <%= video.sport.name %></h4>
-      <video width="500" height="250" src="<%= video.video.url %>" controls></video>
-      <p><%= video.description %></p>
-    </div>
-  <% end %>
-
-  <% @photos.each do |photo| %>
-    <div class="index-posts">
-      <h2><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h2>
-      <h4>in <%= photo.sport.name %></h4>
-      <img src="<%= photo.image.url %>" alt="">
-      <p><%= photo.description %></p>
-    </div>
-  <% end %>
-
-  <section>
-    <ul>
-      <% @sports.each do |sport| %>
-        <li name="sport_id"><a href="/sport/<%= sport.id %>"><%= sport.name %></a></li>
+  <div class="container">
+    <div class="col-md-8">
+      <!-- Iterating through uploaded videos, photos and displaying content -->
+      <% @videos.each do |video| %>
+        <div class="index-posts">
+          <h2><a href="/videos/<%= video.id %>"><%= video.title %></a></h2>
+          <h4>in <%= video.sport.name %></h4>
+          <video width="500" height="350" src="<%= video.video.url %>" controls></video>
+          <p><%= video.description %></p>
+        </div>
       <% end %>
-    </ul>
-  </section>
+
+      <% @photos.each do |photo| %>
+        <div class="index-posts" class="img-responsive">
+          <h2><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h2>
+          <h4>in <%= photo.sport.name %></h4>
+          <img src="<%= photo.image.url %>" alt="" width="500" height="350" class="img-responsive">
+          <p><%= photo.description %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <section class="col-md-4">
+      <div class="categories">
+        <ul>
+          <% @sports.each do |sport| %>
+            <li name="sport_id"><a href="/sport/<%= sport.id %>"><%= sport.name %></a></li>
+          <% end %>
+        </ul>
+      </section>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=devide-width" , "initial-scale=1">
-  <link rel="stylesheet" href="/stylesheets/main.css">
+  <meta name="viewport" content="width=device-width", "initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title>Ballpark</title>
 </head>
 <body>
@@ -23,8 +25,8 @@
         <!-- If user not logged in, nav displays login form -->
         <% else%>
           <form action="/session" method="post">
-            <input class="login-search" name="email" type="email" placeholder="Email">
-            <input class="login-search" name="password" type="password" placeholder="Password">
+            <input class="login" name="email" type="email" placeholder="Email">
+            <input class="login" name="password" type="password" placeholder="Password">
             <button>Login</button>
           </form>
         <% end %>
@@ -53,8 +55,7 @@
   <%= yield %>
 
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
   <script type="text/javascript" src="/scripts/main.js"></script>
 </body>
 </html>

@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
   background-color: #E0E0E0;
 }
 
-header {
-  width: 100%;
-  height: 80px;
-}
-
 nav {
   background-color: #454C4F;
-  margin-bottom: 10px;
 }
 
 ul {
@@ -22,15 +21,12 @@ ul {
 }
 
 #logo {
-  position: relative;
-  left: 0%;
   padding-top: 15px;
-  color: red;
   margin: 0;
-  width: 150px;
-  font-size: 2em;
+  font-size: 1.5em;
   display: inline-block;
   font-family: 'Palanquin Dark', sans-serif;
+  color: white;
 }
 
 span {
@@ -42,48 +38,35 @@ span {
 }
 
 .nav-search {
-  width: 20%;
-  padding: 10px;
-  position: relative;
-  left: 1%;
+  padding: 6px;
   display: inline-block;
-  top: -5px;
   border-radius: 10px;
+  border: none;
+  margin: 1em;
+  width: 30%;
 }
 
 nav form {
   display: inline-block;
-  width: 40%;
   margin: 15px;
 }
 
-.login-search {
-  width: 30%;
+.login {
   padding: 10px;
-  position: relative;
-  left: 110%;
   display: inline-block;
   margin-right: 5px;
-  top: -5px;
   border-radius: 10px;
 }
 
 nav form button {
   display: inline-block;
-  position: relative;
-  left: 111%;
-  top: -5px;
-  width: 15%;
   padding: 10px;
 }
 
 nav li {
   text-align: center;
   display: inline-block;
-  width: 10%;
   font-size: 1em;
-  position: relative;
-  left: 50%;
   padding: 12px;
   font-family: 'Palanquin Dark', sans-serif;
 }
@@ -94,21 +77,13 @@ nav a {
 }
 
 .logout {
-  width: 5%;
-  position: relative;
-  left: 18%;
 }
 
 .logout form {
-  width: 0%;
+
 }
 
 .logout button {
-  width: 100px;
-}
-
-.index-posts {
-  text-align: center;
 }
 
 h2 {
@@ -119,9 +94,6 @@ h2 {
 }
 
 .new-posts {
-  position: relative;
-  left: 36%;
-  width: 60%;
 }
 
 .new-posts input, textarea {
@@ -129,25 +101,16 @@ h2 {
 }
 
 .new-posts input, select, textarea   {
-  width: 40%;
   margin: 15px;
   padding: 15px;
   border-radius: 15px;
 }
 
 .new-posts select {
-  width: 45%;
 }
 
 .new-posts button {
-  position: relative;
-  width: 20%;
-  left: 14%;
-}
 
-img {
-  max-width: 500px;
-  height: 250px;
 }
 
 video {
@@ -158,8 +121,6 @@ h4 {
   text-align: left;
   margin: 0;
   padding: 0;
-  position: relative;
-  left: 2%;
   font-family: 'Roboto Slab', serif;
 }
 
@@ -206,4 +167,10 @@ p {
   position: relative;
   right: 2em;
   padding: 20px;
+}
+
+@media (max-width: 1000px) {
+  .nav-search {
+    width: 60%;
+  }
 }

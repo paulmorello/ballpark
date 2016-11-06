@@ -5,11 +5,7 @@ header {
 }
 
 .index-posts {
-  width: 50%;
-  height: 50%;
   background-color: white;
-  position: relative;
-  left: 8%;
   padding: 10px;
   margin-bottom: 10px;
   box-shadow: .5px .5px .5px;
@@ -25,7 +21,8 @@ h2 {
 }
 
 img {
-  margin-top: 15px;
+  display: block;
+  margin: 20px auto;
 }
 
 video {
@@ -45,5 +42,15 @@ h4 {
   left: 2%;
   font-family: 'Roboto Slab', serif;
   border-bottom: 1px solid lightgrey;
-  width: 95%;
+}
+
+p {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .categories {
+    visibility: hidden;
+  }
 }

@@ -1,29 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
 
 html {
-  height: 100%;
-  width: 100%;
   background-image: url("http://www.sportsauthorityfieldatmilehigh.com/images/default-source/site-images/bg-body.jpg");
   background-size: cover;
 }
 
 body {
-  height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
 }
 
-#home-wrapper {
-  width: 80%;
-  margin: auto;
+.container {
+  height: 30em;
 }
 
 .home-search {
-  float: left;
-  width: 40%;
-  position: absolute;
-  top: 25%;
   color: white;
   text-align: center;
+  margin: 8em 0em 0em 3em;
 }
 
 .home-search h2 {
@@ -32,17 +27,16 @@ body {
 }
 
 .home-search input {
-  width: 95%;
   padding: 15px;
   font-size: 1.2em;
   border-radius: 15px;
+  width: 90%;
 }
 
 .sign-up {
-  float: right;
-  width: 40%;
-  margin-top: 6%;
+  margin-top: 6em;
   border: 2px solid white;
+  border-radius: 5px;
   color: white;
 }
 
@@ -50,54 +44,50 @@ body {
   font-size: 2em;
   text-align: center;
   font-family: 'Palanquin Dark', sans-serif;
+  margin-bottom: 20px;
 }
 
 .sign-up input {
   display: block;
-  width: 65%;
   padding: 10px;
   font-size: .8em;
-  border-radius: 15px;
-  margin: 15px auto;
+  border-radius: 8px;
+  margin: 5px auto;
+  width: 80%;
+  border: none;
 }
 
 .sign-up button {
-  position: relative;
-  left: 35%;
-  width: 20%;
-  margin: 20px;
+  display: block;
   padding: 10px;
+  width: 10em;
+  margin: 2em auto;
+  background-color: #008A20;
+  border: none;
+  border-radius: 5px;
 }
 
-@media (max-width: 400px) {
-
-  html {
-    background-color: #13B04C;
-    background-image: none;
-    background-size: none;
-  }
-
-  body {
-    background: rgba(0, 0, 0, 0);
-  }
-
-  #home-wrapper {
-    width: 100%;
-  }
-
+@media (max-width: 1000px) {
   .home-search {
-    float: none;
-    display: block;
-    margin: 20px auto;
-    margin-top: 120px;
-    width: 80%;
-    position: static;
+    visibility: collapse;
   }
+}
+
+@media (max-width: 650px) {
+  html {
+    background-image: url("http://4.bp.blogspot.com/-KZ8YCkUOjJU/Uq45U27h_VI/AAAAAAAAAOY/7vkL7-fDzqE/s1600/IMG_3751.jpg");
+    overflow: hidden;
+  }
+
   .sign-up {
-    float: none;
-    display: block;
-    margin: 20px auto;
-    width: 80%;
-    position: static;
+    border: none;
+    margin-top: 12em;
+  }
+  .sign-up input {
+    width: 95%;
+  }
+
+  .sign-up button {
+    width: 10em;
   }
 }
