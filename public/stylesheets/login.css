@@ -1,29 +1,50 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
 
-html {
-  background-image: url("http://www.sportsauthorityfieldatmilehigh.com/images/default-source/site-images/bg-body.jpg");
+.login-container {
+  width: 100%;
+  height: 100%;
+  background: url("http://www.sportsauthorityfieldatmilehigh.com/images/default-source/site-images/bg-body.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
-body {
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
+.nav-wrapper {
   width: 100%;
+  background-color: #454C4F;
 }
 
-.container {
-  height: 30em;
+.nav-logo {
+  width: 20%;
+  display: inline-block;
+}
+
+.nav-search-wrapper {
+  width: 75%;
+  display: inline-block;
+  text-align: right;
+}
+
+.nav-search-wrapper input, button {
+  border: none;
+}
+
+.nav-search-wrapper button {
+  border-radius: 5px;
+  color: white;
+  background-color: #008A20;
+  width: 6em;
 }
 
 .home-search {
   color: white;
   text-align: center;
-  margin: 8em 0em 0em 3em;
+  display: block;
+  margin: 10em auto;
 }
 
 .home-search h2 {
   font-size: 2.5em;
   font-family: 'Palanquin Dark', sans-serif;
+  color: white;
 }
 
 .home-search input {
@@ -31,6 +52,7 @@ body {
   font-size: 1.2em;
   border-radius: 15px;
   width: 90%;
+  border: none;
 }
 
 .sign-up {
@@ -45,6 +67,7 @@ body {
   text-align: center;
   font-family: 'Palanquin Dark', sans-serif;
   margin-bottom: 20px;
+  color: white;
 }
 
 .sign-up input {
@@ -74,7 +97,7 @@ body {
 }
 
 @media (max-width: 650px) {
-  html {
+  .login-container {
     background-image: url("http://4.bp.blogspot.com/-KZ8YCkUOjJU/Uq45U27h_VI/AAAAAAAAAOY/7vkL7-fDzqE/s1600/IMG_3751.jpg");
     overflow: hidden;
   }

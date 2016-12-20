@@ -1,36 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
-html {
-  height: 100%;
+.wrapper {
   width: 100%;
-}
-
-body {
-  margin: 0;
-  box-sizing: border-box;
-  background-color: #E0E0E0;
-}
-
-nav {
-  background-color: #454C4F;
-}
-
-ul {
-  margin: 0;
+  height: 100vh;
 }
 
 #logo {
-  padding-top: 15px;
-  margin: 0;
-  font-size: 1.5em;
-  display: inline-block;
+  font-size: 2em;
   font-family: 'Palanquin Dark', sans-serif;
   color: white;
+  padding-left: 2em;
 }
 
-span {
+#logo a:hover {
   color: white;
+  text-decoration: none;
 }
 
 #menu-btn {
@@ -76,26 +61,6 @@ nav a {
   color: white;
 }
 
-.logout {
-}
-
-.logout form {
-
-}
-
-.logout button {
-}
-
-h2 {
-  text-align: center;
-  font-size: 2em;
-  font-family: 'Palanquin Dark', sans-serif;
-  margin-bottom: 30px;
-}
-
-.new-posts {
-}
-
 .new-posts input, textarea {
   display: block;
 }
@@ -104,13 +69,6 @@ h2 {
   margin: 15px;
   padding: 15px;
   border-radius: 15px;
-}
-
-.new-posts select {
-}
-
-.new-posts button {
-
 }
 
 video {

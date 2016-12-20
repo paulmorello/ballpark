@@ -1,20 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 @import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
 
-.profile-header {
-
-}
-
-h2 {
-  text-align: left;
-  margin-left: 20px;
-  border-right: 1px solid #333;
-  display: inline-block;
-  padding-right: 10px;
-  margin-right: 5px;
-  color: #008A20;
-}
-
 h3 {
   display: inline-block;
   font-family: 'Palanquin Dark', sans-serif;

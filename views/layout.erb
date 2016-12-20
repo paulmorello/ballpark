@@ -6,55 +6,63 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/login.css">
+  <link rel="stylesheet" href="/stylesheets/show.css">
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <link rel="stylesheet" href="/stylesheets/profile.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title>Ballpark</title>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <ul>
-        <h3 id="logo"><a href="/">Ball<span>Park</span></a></h3>
+  <div class="wrapper">
+    <div class="nav-wrapper">
+      <header>
+        <nav>
+          <ul>
+            <div class="nav-logo">
+              <h3 id="logo"><a href="/">BallPark</a></h3>
+            </div>
 
-        <!-- If user is logged in nav displays links and logout button -->
-        <% if logged_in? %>
-          <input class="nav-search" type="text" placeholder="search">
-          <li id="menu-btn">Welcome <%= current_user.username %>!</a></li>
+            <div class="nav-search-wrapper">
+              <!-- If user is logged in nav displays links and logout button -->
+              <% if logged_in? %>
+                <input class="nav-search" type="text" placeholder="search">
+                <li id="menu-btn">Welcome <%= current_user.username %>!</a></li>
 
-        <!-- If user not logged in, nav displays login form -->
-        <% else%>
-          <form action="/session" method="post">
-            <input class="login" name="email" type="email" placeholder="Email">
-            <input class="login" name="password" type="password" placeholder="Password">
-            <button>Login</button>
-          </form>
-        <% end %>
+                <!-- If user logged in display dropdown menu -->
+                <div id="dropdown-menu">
+                  <ul class="responsive-menu">
+                    <li><a href="/user_profile/<%= current_user.id %>">Profile</a></li>
+                    <li><a href="/user_profile/<%= current_user.id %>/edit">My Account</a></li>
+                    <li class="logout">
+                      <form action="/session" method="post">
+                      <input type="hidden" name="_method" value="DELETE">
+                      <button>Log Out</button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
 
-      </ul>
-    </nav>
-
-    <!-- If user logged in display dropdown menu -->
-    <% if logged_in? %>
-    <div id="dropdown-menu">
-      <ul class="responsive-menu">
-          <li><a href="/user_profile/<%= current_user.id %>">Profile</a></li>
-          <li><a href="/user_profile/<%= current_user.id %>/edit">My Account</a></li>
-          <li class="logout">
-            <form action="/session" method="post">
-            <input type="hidden" name="_method" value="DELETE">
-            <button>Log Out</button>
-            </form>
-          </li>
-      </ul>
+              <!-- If user not logged in, nav displays login form -->
+              <% else%>
+                <form action="/session" method="post">
+                  <input class="login" name="email" type="email" placeholder="Email">
+                  <input class="login" name="password" type="password" placeholder="Password">
+                  <button>Login</button>
+                </form>
+              <% end %>
+            </div>
+          </ul>
+        </nav>
+      </header>
     </div>
-    <% end %>
-  </header>
 
+    <%= yield %>
 
-  <%= yield %>
-
-
+  </div>
 
   <script type="text/javascript" src="/scripts/main.js"></script>
 </body>
