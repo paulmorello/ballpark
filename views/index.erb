@@ -1,6 +1,7 @@
 
+<div class="wrapper">
   <div class="container">
-    <div class="col-md-8">
+    <div class="col-md-9">
       <!-- Iterating through uploaded videos, photos and displaying content -->
       <% @videos.each do |video| %>
         <div class="index-posts">
@@ -12,7 +13,7 @@
       <% end %>
 
       <% @photos.each do |photo| %>
-        <div class="index-posts" class="img-responsive">
+        <div class="index-posts">
           <h2><a href="/photos/<%= photo.id %>"><%= photo.title %></a></h2>
           <h4>in <%= photo.sport.name %></h4>
           <img src="<%= photo.image.url %>" alt="" width="500" height="350" class="img-responsive">
@@ -21,13 +22,15 @@
       <% end %>
     </div>
 
-    <section class="col-md-4">
+    <section class="col-md-3">
       <div class="categories">
+        <h2>Search by sport</h2>
         <ul>
           <% @sports.each do |sport| %>
             <li name="sport_id"><a href="/sport/<%= sport.id %>"><%= sport.name %></a></li>
           <% end %>
         </ul>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>
+</div>

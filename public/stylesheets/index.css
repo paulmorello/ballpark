@@ -1,43 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
 
 .index-posts {
+  width: 44%;
+  height: 30em;
+  margin: .5em;
+  display: inline-block;
   background-color: white;
-  padding: 10px;
-  margin-bottom: 10px;
   box-shadow: .5px .5px .5px;
+  vertical-align: middle;
 }
 
-img {
-  display: block;
-  margin: 20px auto;
-}
-
-video {
-  margin-top: 15px;
-}
-
-a {
-  text-decoration: none;
-  color: #008A20;
-}
-
-h4 {
+.index-posts h4 {
   text-align: left;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  left: 2%;
   font-family: 'Roboto Slab', serif;
+}
+
+.index-posts p {
+  font-size: 1em;
+  text-align: center;
+}
+
+.categories {
+  padding: .5em;
+  margin: .5em;
+  width: 100%;
+  box-shadow: .5px .5px .5px;
+  border: 1px solid lightgrey;
+}
+
+.categories h2 {
+  padding: 1em;
+  font-size: 1.4em;
+  font-family: 'Palanquin Dark', serif;
   border-bottom: 1px solid lightgrey;
 }
 
-p {
-  font-size: 1.2em;
-  text-align: center;
+.categories li {
+  list-style: none;
+  padding: .5em 0 .2em 1em;
+  font-family: 'Roboto Slab', serif;
 }
 
 @media (max-width: 1000px) {
   .categories {
     visibility: hidden;
+  }
+  .index-posts {
+    display: block;
+    width: 80%;
   }
 }

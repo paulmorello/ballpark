@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin+Dark');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
-.wrapper {
+.home-wrapper {
   width: 100%;
   height: 100vh;
+}
+
+.container {
+  height: 100%;
 }
 
 #logo {
@@ -73,13 +77,6 @@ nav a {
 
 video {
   margin-top: 15px;
-}
-
-h4 {
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto Slab', serif;
 }
 
 p {

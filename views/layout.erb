@@ -17,7 +17,7 @@
 </head>
 <body>
 
-  <div class="wrapper">
+  <div class="home-wrapper">
     <div class="nav-wrapper">
       <header>
         <nav>
@@ -37,6 +37,8 @@
                   <ul class="responsive-menu">
                     <li><a href="/user_profile/<%= current_user.id %>">Profile</a></li>
                     <li><a href="/user_profile/<%= current_user.id %>/edit">My Account</a></li>
+                    <li><a href="/photos/new">Upload Photo</a></li>
+                    <li><a href="/videos/new">Upload Video</a></li>
                     <li class="logout">
                       <form action="/session" method="post">
                       <input type="hidden" name="_method" value="DELETE">
