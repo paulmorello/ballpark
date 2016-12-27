@@ -1,14 +1,16 @@
-<h2>Edit Profile</h2>
+<div class="profile-edit-form">
+  <div class="new-posts">
+    <h2>Edit Profile</h2>
 
-<h3><%= @user.username %></h3>
+    <h3>These are your current details <%= @user.username %></h3>
 
-<div class="new-posts">
-  <form action="/user_profile/<%= @user.id %>" method="post" enctype="multipart/form-data">
-    <input name="email" type="text" value="<%=@user.email%>">
+    <form action="/user_profile/<%= @user.id %>" method="post" enctype="multipart/form-data">
+      <input name="email" type="text" value="<%=@user.email%>">
 
-    <label for="">Insert Profile Picture</label>
-    <input name="avatar" type="file">
+      <label for="">Insert Profile Picture</label>
+      <input name="avatar" type="file">
 
-    <button>Save</button>
-  </form>
+      <button>Save</button>
+    </form>
+  </div>
 </div>

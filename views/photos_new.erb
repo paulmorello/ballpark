@@ -1,20 +1,21 @@
+<div class="photos-new-form">
+  <div class="new-posts">
+    <h2>New Photo</h2>
 
-<h2>New Photo</h2>
+    <form action="/photos" method="post" enctype="multipart/form-data">
 
-<div class="new-posts">
-  <form action="/photos" method="post" enctype="multipart/form-data">
+      <input name="title" type="text" placeholder="Title">
 
-    <input name="title" type="text" placeholder="Title">
+      <!-- Iterates through all available sport tags -->
+      <select name="sport_id" type="text" value="">
+        <% @sports.each do |sport| %>
+          <option value="<%= sport.id %>"><%= sport.name %></option>
+        <% end %>
+      </select>
 
-    <!-- Iterates through all available sport tags -->
-    <select name="sport_id" type="text" value="">
-      <% @sports.each do |sport| %>
-        <option value="<%= sport.id %>"><%= sport.name %></option>
-      <% end %>
-    </select>
-
-    <textarea name="description" rows="8" cols="40" placeholder="Description"></textarea>
-    <input name="image" type="file" placeholder="Photo URL">
-    <button>Create</button>
-  </form>
+      <textarea name="description" placeholder="Description"></textarea>
+      <input name="image" type="file" placeholder="Photo URL">
+      <button>Create</button>
+    </form>
+  </div>
 </div>

@@ -124,6 +124,57 @@ p {
   padding: 15px;
 }
 
+.profile-edit-form, .photos-new-form, .videos-new-form, .photo-edit-form, .video-edit-form {
+  width: 40%;
+  display: block;
+  margin: 5em auto;
+}
+
+.new-posts {
+  width: 100%;
+  text-align: center;
+}
+
+.new-posts h2 {
+  width: 30%;
+  font-size: 1.5em;
+  margin: 2em auto;
+  padding: 10px;
+  border-bottom: 2px solid black;
+}
+
+.new-posts h3 {
+  color: #333;
+}
+
+.new-posts input {
+  width: 90%;
+  border: 1px solid lightgrey;
+}
+
+.new-posts textarea {
+  display: block;
+  margin: .5em auto;
+  width: 85%;
+  border: 1px solid lightgrey;
+
+}
+
+.new-posts select {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.new-posts button {
+  width: 70%;
+  padding: 10px;
+  border-radius: 2px;
+  color: white;
+  background-color: #008A20;
+  margin: 1em;
+}
+
 @media (max-width: 1000px) {
   .nav-search {
     width: 60%;
