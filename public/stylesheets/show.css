@@ -76,7 +76,11 @@
 
 .comments {
   background-color: white;
-  margin: 1em;
+  margin-bottom: 3em;
+}
+
+.comments h3 {
+  text-align: center;
 }
 
 .comments h5 {
@@ -90,7 +94,7 @@
   font-family: 'Roboto Slab', serif;
   font-size: 1em;
   color: black;
-  text-align: center;
+  text-align: left;
 }
 
 .delete-button {

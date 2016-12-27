@@ -89,23 +89,20 @@ p {
   position: absolute;
   right: 0;
   background-color: #454C4F;
-  margin-right: 1em;
+  margin-right: .5em;
   width: 20%;
 }
 
 .responsive-menu {
-  text-align: left;
   font-size: 1.2em;
   font-family: 'Roboto Slab', serif;
 }
 
 .responsive-menu li {
   display: block;
-  position: relative;
-  right: 2em;
-  width: 150px;
-  margin: 1.4em;
+  width: 100%;
   color: white;
+  text-align: left;
 }
 
 .responsive-menu a {
@@ -117,11 +114,14 @@ p {
   color: #008A20;
 }
 
+.responsive-menu form {
+  width: 100%;
+}
+
 .responsive-menu li button {
   display: block;
-  position: relative;
-  right: 2em;
-  padding: 20px;
+  width: 86%;
+  padding: 15px;
 }
 
 @media (max-width: 1000px) {
